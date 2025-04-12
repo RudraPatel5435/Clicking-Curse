@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+:root {
+    background-image: url('./assets/dungeon-bg.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+    font-family: 'Pixelify Sans';
+    color: rgba(255, 255, 255, 0.87);
+}
