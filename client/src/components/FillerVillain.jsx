@@ -8,7 +8,7 @@ import shadow_rogue from "../assets/filler-villians-bg/shadow-rogue-removebg.png
 import swamp_witch from "../assets/filler-villians-bg/swamp-witch-removebg.png"
 import ashen_monk from "../assets/filler-villians-bg/ashen-monk-removebg.png"
 
-const Filler_Villian = ({ gameLevel }) => {
+const FillerVillian = ({ gameLevel }) => {
     const all_filler_villians = [
         bone_herald,
         ashen_monk,
@@ -32,15 +32,15 @@ const Filler_Villian = ({ gameLevel }) => {
         "Swamp Witch"
     ]
     return (
-        <div>
-            <div className='text-blue-500 text-5xl'>
-                <span>{all_filler_villians_name[Math.floor((gameLevel % 10) - 1)]}</span>
+        <>
+            <div className='text-5xl'>
+                {all_filler_villians_name[Math.floor((gameLevel % 10) - 1)]}
             </div>
             <div className='mt-[150px]'>
                 <img src={all_filler_villians[Math.floor((gameLevel % 10) - 1)]} />
             </div>
-        </div>
+        </>
     )
 }
 
-export default Filler_Villian 
+export default FillerVillian 

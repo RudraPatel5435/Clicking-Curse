@@ -4,8 +4,10 @@ import App from './App.jsx'
 import { BrowserRouter, Route, Routes}from "react-router-dom"
 import GameScreen from './components/GameScreen.jsx'
 import Instructions from './Components/Instructions.jsx'
+import { StrictMode } from 'react'
 
 createRoot(document.getElementById('root')).render(
+    <StrictMode>
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />} />
@@ -13,5 +15,6 @@ createRoot(document.getElementById('root')).render(
             <Route path='/instructions' element={<Instructions />} />
             {/* <Route path='/login' element={<Login />} /> */}
     </Routes>
-    </BrowserRouter>,
+    </BrowserRouter>
+    </StrictMode>
 )

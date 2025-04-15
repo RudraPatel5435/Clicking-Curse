@@ -1,8 +1,8 @@
 import React, {useRef, useState} from 'react'
 import gsap from "gsap"
 import {useGSAP} from "@gsap/react"
-import King_Villian from './King_Villain'
-import Filler_Villian from './Filler_Villain'
+import KingVillian from './KingVillain'
+import FillerVillian from './FillerVillain'
 
 const GameScreen = () => {
     const healthRef = useRef()
@@ -56,10 +56,10 @@ const attackingEnemy = () => {
             {
                 gameLevel%10 == 0 ? 
                 (
-                    <King_Villian gameLevel={gameLevel} />
+                    <KingVillian gameLevel={gameLevel} />
                 ) : 
                 (
-                    <Filler_Villian gameLevel={gameLevel} />
+                    <FillerVillian gameLevel={gameLevel} />
                 )
             }
         </div>
