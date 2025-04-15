@@ -1,9 +1,9 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import GameScreen from './components/GameScreen.jsx'
-import Instructions from './components/Instructions.jsx'
 import { BrowserRouter, Route, Routes}from "react-router-dom"
+import GameScreen from './components/GameScreen.jsx'
+import Instructions from './Components/Instructions.jsx'
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>

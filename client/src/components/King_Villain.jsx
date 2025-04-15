@@ -6,7 +6,7 @@ import demon_blacksmith from "../assets/king-villians-bg/king-demon-blacksmith-r
 import serpent_warlock from "../assets/king-villians-bg/king-serpent-warlock-removebg.png"
 import stone_guardian from "../assets/king-villians-bg/king-stone-guardian-removebg.png"
 
-const King_Villian= () => {
+const King_Villian= ({gameLevel}) => {
     const all_king_villians = [
         behemoth_executioner,
         chimera,
@@ -15,11 +15,24 @@ const King_Villian= () => {
         serpent_warlock,
         stone_guardian
     ]
+
+    const all_king_villians_name = [
+        'Behemoth Executioner',
+        "King Chimera",
+        "King Cursed Knight",
+        "Demon Blacksmith",
+        "Serpent Warlock",
+        "Stone Guardian"
+    ]
     return(
-        <div>
-        {all_king_villians.map((e, idx)=> (
-            <img src={e} key={idx}/>
-            ))}
+        <div className='container'>
+        <div className='bg-red-500'>
+            <span className='text-blue-400'>{all_king_villians_name[Math.floor((gameLevel/10)-1)]}</span>
+        </div>
+        <div className='img'>
+            <img src={all_king_villians[Math.floor((gameLevel/10)-1)]} />
+        </div>
+
         </div>
     )
 }

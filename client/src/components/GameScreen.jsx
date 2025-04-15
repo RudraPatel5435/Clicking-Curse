@@ -1,10 +1,12 @@
 import React, {useRef, useState} from 'react'
 import gsap from "gsap"
 import {useGSAP} from "@gsap/react"
-import Filler_Villian from './Filler_Villian'
-import King_Villian from './King_Villian'
+import King_Villian from './King_Villain'
+import Filler_Villian from './Filler_Villain'
 
 const GameScreen = () => {
+    const healthRef = useRef()
+    
     const [gameLevel, setGameLevel] = useState(1)
     // const [heroDamages, setHeroDamages] useState()
     const [currClickDamage, setCurrClickDamage] = useState(upgradeClickDamage(gameLevel))
@@ -33,11 +35,11 @@ const attackingEnemy = () => {
 
 
     function upgradeClickDamage(upgradeLevel) {
-        const baseClickDamage = 50;
+        const baseClickDamage = 1000;
         if(upgradeLevel==1) return baseClickDamage
         return Math.floor(baseClickDamage * (1.5 ** (upgradeLevel - 1)));
     }
-    const healthRef = useRef()
+    
 
     useGSAP(()=>{
         gsap.to(healthRef.current, {
@@ -46,13 +48,20 @@ const attackingEnemy = () => {
     }, [villianHealth])
 
     return(
-        <div onClick={attackingEnemy} className='bg-zinc-900 bg-[url(/scene-1.jpeg)] bg-contain bg-no-repeat min-h-screen '>
+        <div onClick={attackingEnemy} className='bg-zinc-900 bg-[url(/scene-1.jpeg)] bg-cover bg-no-repeat min-h-screen '>
             <div>
                     <div ref={healthRef} className='health-bar h-[20px] w-[500px] bg-green-500'></div>
                 <span className='v-health'>{villianHealth}</span>
             </div>
-            <Filler_Villian />            
-            <King_Villian />
+            {
+                gameLevel%10 == 0 ? 
+                (
+                    <King_Villian gameLevel={gameLevel} />
+                ) : 
+                (
+                    <Filler_Villian gameLevel={gameLevel} />
+                )
+            }
         </div>
     )
 }

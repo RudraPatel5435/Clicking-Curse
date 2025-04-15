@@ -1,11 +1,12 @@
 import React from 'react'
 import '../instructions.css'
+import { Link } from 'react-router'
 
 const Instructions = () => {
     return(
         <div className='h-screen flex items-center justify-center'>
             <div className='container bg-zinc-800/80 rounded-lg p-10'>
-                <a href="/" className='bg-orange-600 px-4 py-2 text-2xl rounded-md'>{"< Back"}</a> 
+                <Link to="/" className='bg-orange-600 px-4 py-2 text-2xl rounded-md'>{"< Back"}</Link> 
                 <h1>📜 How to Play</h1>
                 <span>Welcome to Clicking Curse – a fast-paced tapping adventure where every tap brings you closer to victory!</span>
                 <h1>🎮 Game Objective</h1>
