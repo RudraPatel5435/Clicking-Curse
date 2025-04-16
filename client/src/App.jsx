@@ -19,7 +19,7 @@ const App = () => {
     })
 
     return (
-        <div className='h-screen flex gap-12 flex-col items-center justify-center'>
+        <div className='bg-[url(/dungeon-bg.jpeg)] bg-no-repeat bg-cover bg-center h-screen w-screen flex gap-12 flex-col items-center justify-center'>
 
             <div>
                 <img ref={logoRef} className='h-[500px]' src={logo} />
